@@ -7,13 +7,10 @@ module.exports = {
 // creating a review
 function create(req, res){
 	// first check the contents of the form
-	// console.log('========================');
-	// console.log(req.body, " <- content of the form");
-	// console.log('=========================')
-	// // check for the movie id in the params
-	// console.log('========================');
-	// console.log(req.params.id, ' <req.params.id aka(the movie id)')
-	// console.log('========================');
+	console.log('========================');
+	console.log(req.body);
+	console.log('=========================')
+	
 
 
 	// NOW We need to use our model to take the contents of the form (req.body)
@@ -31,10 +28,7 @@ function create(req, res){
 			return res.send('error from create reviews check the terminal')
 		}
         
-		// console.log('========================');
-		// console.log(movieDoc, " <- movie from the database!")
-		// console.log('========================');
-
+		
         // 2. add the review to the movieDoc reviews array
         flightLog.destinations.push(req.body);
         flightLog.save(function (err) {
