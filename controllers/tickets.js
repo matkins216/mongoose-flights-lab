@@ -8,9 +8,11 @@ module.exports = {
 
 
 function create(req, res) {
+	console.log(req.params.id, '--------------------this is params id')
 	req.body.flight = req.params.id
 
 	Ticket.create(req.body, function (err, ticketDoc) {
+
 		if (err) {
 			console.log("======================err");
 			console.log(err);

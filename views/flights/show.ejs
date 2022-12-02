@@ -10,27 +10,30 @@
 <body>
     <h1></h1>
     <section id="show-page">
-        <div>Airline: </div>
+        <div class="titlediv">Airline: </div>
         <div><%= flight.airline %></div>
-        <div>Airport: </div>
+        <br>
+        <div class="titlediv">Airport: </div>
         <div><%= flight.airport %></div>
-        <div>Flight Number: </div>
+        <br>
+        <div class="titlediv">Flight Number: </div>
         <div><%= flight.flightNo %></div>
-        <div>Departs: </div>
+        <br>
+        <div class="titlediv">Departs: </div>
         <div><%= flight.departs %></div>
         
-        
-      </section>
-      <br>
-      
-        <div>TICKETS:</div>
+        <br>
+
+        <div>Tickets:</div>
         <ul>
           <% tickets.forEach(ticket => { %>
-          <li><%= ticket.seat %> <%= ticket.price %>  </li> 
+          <li>SEAT: <%= ticket.seat %> Price: <%= ticket.price %>  </li> 
           <% }) %> 
         </ul>
-      <br>
-      <a href="/flights/<%= flight._id %>/tickets/new">ADD NEW TICKET</a>
+        <a href="/flights/<%=flight._id%>/tickets/new">ADD NEW TICKET</a>
+      </section>
+   
+     
 
       <br><br><h2>New Destination</h2>
 <form  method="POST"
@@ -43,11 +46,13 @@
     <option value="LAX">Los Angeles</option>
     <option value="SAN" selected>San Diego</option>
   </select>
+  <br>
   <label>Arrival:</label>
       <input type="datetime-local" name="arrival">
   <input type="submit" value="Add Destination">
 </form>
-
+<br>
+<br>
 <% if (flight.destinations.length) { %>
     <table>
       <thead>

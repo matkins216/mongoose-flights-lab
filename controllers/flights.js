@@ -9,15 +9,14 @@ module.exports = {
     show
 }
 
-async function show(req, res){
-    const flightLog = await Flight.findById(req.params.id);
-
-}
+// async function show(req, res){
+//     const flightLog = await Flight.findById(req.params.id);
+// }
 
 function show(req, res) {
     Flight.findById(req.params.id, function (err, flightLog) {
 
-        Ticket.find({ flight: flightLog._id }, function (err, ticketsDoc) {
+        Ticket.find({ flight: flightLog }, function (err, ticketsDoc) {
             console.log(ticketsDoc, ' <----- ticket information')
             console.log(flightLog)
             res.render('flights/show', { flight: flightLog, tickets: ticketsDoc })

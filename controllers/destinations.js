@@ -32,10 +32,12 @@ function create(req, res) {
         flightLog.destinations.push(req.body);
         flightLog.save(function (err) {
             console.log(flightLog)
-            // res.redirect(`/movies/${req.params.id}`)
+            
+			res.redirect(`/flights/${req.params.id}`)
+
         });
 
-		res.redirect(`/flights/${req.params.id}`)
+	
 
 	})
 };
