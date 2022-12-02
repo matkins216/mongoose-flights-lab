@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const flightCtrl = require('../controllers/flights')
+const ticketCtrl = require('../controllers/tickets')
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {

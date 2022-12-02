@@ -31,15 +31,19 @@ const flightSchema = new Schema({
     },
     departs: {
         type: Date,
-        default: function() {
-            
-            return new Date().getFullYear();
+        default: function () {
+
+            const now = new Date();
+            const oneYr = new Date();
+            oneYr.setYear(now.getYear() + 1);
+            $("#yearFromNow").append(oneYr.toString());
         },
         min: 2022
     },
     destinations: [destinationSchema]
 
-  });
+
+});
 
 
 
@@ -47,4 +51,4 @@ const flightSchema = new Schema({
 
 
 
-  module.exports = mongoose.model('Flight', flightSchema) 
+module.exports = mongoose.model('Flight', flightSchema) 

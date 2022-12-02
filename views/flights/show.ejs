@@ -21,6 +21,16 @@
         
         
       </section>
+      <br>
+      
+        <div>TICKETS:</div>
+        <ul>
+          <% tickets.forEach(ticket => { %>
+          <li><%= ticket.seat %> <%= ticket.price %>  </li> 
+          <% }) %> 
+        </ul>
+      <br>
+      <a href="/flights/<%= flight._id %>/tickets/new">ADD NEW TICKET</a>
 
       <br><br><h2>New Destination</h2>
 <form  method="POST"
